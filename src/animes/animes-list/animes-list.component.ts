@@ -9,13 +9,13 @@ import { AnimesDetailComponent } from '../animes-detail/animes-detail.component'
 })
 export class AnimesListComponent implements OnInit {
   animes: Array<Anime> =[]; 
-  selectedAnime!: AnimesDetailComponent; 
+  selectedAnime!: Anime; 
   selected= false;
   constructor(private animesService:AnimesService) { }
   getAnimes():void{ 
     this.animesService.getAnimes().subscribe((animes)=>{this.animes=animes;});
   } 
-  onSelected(anime: AnimesDetailComponent): void {
+  onSelected(anime: Anime): void {
     this.selected = true;
     this.selectedAnime = anime;
   } 
